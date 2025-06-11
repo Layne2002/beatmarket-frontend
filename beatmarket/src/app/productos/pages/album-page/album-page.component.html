@@ -1,0 +1,24 @@
+<mat-card *ngIf="album as a" class="album-card">
+  <mat-card-header>
+    <mat-card-title>{{ a?.name }} / {{ a?.artist }}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image [src]="getAlbumImage(a)" alt="{{ a?.name }}" />
+
+  <mat-card-content>
+    <p *ngIf="a?.wiki?.summary" [innerHTML]="a.wiki?.summary"></p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <ng-container *ngIf="enStock; else solicitarTemplate">
+      <button mat-raised-button color="primary" [routerLink]="['/productos', mongoId]">
+        Comprar ahora
+      </button>
+    </ng-container>
+    <ng-template #solicitarTemplate>
+      <button mat-raised-button color="accent" (click)="solicitarAlbum(a)">
+        ¿Quieres que lo añadamos al catálogo?
+      </button>
+    </ng-template>
+  </mat-card-actions>
+</mat-card>

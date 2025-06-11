@@ -1,0 +1,104 @@
+.carrito-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #f1f1f1;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  input[type="number"] {
+    width: 60px;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #f1f1f1;
+  }
+
+  .carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .imagen-wrapper {
+    flex-shrink: 0;
+  }
+
+  .carrito-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .acciones {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .carrito-total {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .botones-finales {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .carrito-vacio-info {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #e0e0e0;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: #cccccc;
+    }
+
+    button {
+      background-color: #3f51b5;
+      color: white;
+
+      &:hover {
+        background-color: #303f9f;
+      }
+    }
+  }
+}

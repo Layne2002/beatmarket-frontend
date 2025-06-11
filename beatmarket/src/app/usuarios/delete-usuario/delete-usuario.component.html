@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Eliminar a {{ usuario.nombre }} {{ usuario.apellidos }}</h2>
+
+<div class="mat-dialog-content">
+  <h3 class="warning-text">
+    <strong>¡Atención!:</strong> {{ usuario.email }}
+  </h3>
+
+  <p class="confirm-text">
+    Este usuario será eliminado de forma permanente. ¿Está seguro de eliminarlo?
+  </p>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button id="deleteUser" type="submit" (click)="eliminarUsuario()">
+      Eliminar
+    </button>
+    <button mat-button id="onNoClick" (click)="onNoClick()" tabindex="-1">
+      Cancelar
+    </button>
+  </div>
+</div>

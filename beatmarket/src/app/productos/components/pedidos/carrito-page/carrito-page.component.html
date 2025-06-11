@@ -1,0 +1,42 @@
+<div class="carrito-page">
+    <h2 style="color: black">Mi Carrito</h2>
+  
+    <div *ngIf="carrito && carrito.items && carrito.items.length > 0; else carritoVacio">
+      <div *ngFor="let item of carrito.items" class="carrito-item">
+        <div class="imagen-wrapper">
+          <img [src]="{ name: item.tituloAlbum, artist: item.autor } | ProductoImagePipe" alt="{{ item.tituloAlbum }}" class="carrito-img" />
+        </div>
+        <div class="info">
+          <h4>{{ item.tituloAlbum }} - {{ item.autor }}</h4>
+          <p>
+            Precio: {{ item.precio }} € × 
+            <input type="number" [(ngModel)]="item.cantidad" (ngModelChange)="cambiarCantidad(item)" />
+          </p>
+        </div>
+        <div class="acciones">
+          <button mat-icon-button color="warn" (click)="eliminarItem(item.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+  
+      <div class="carrito-total">
+        <p>Total: {{ total | number:'1.2-2' }} €</p>
+        <div class="botones-finales">
+          <button mat-raised-button color="warn" (click)="vaciarCarrito()">Vaciar carrito</button>
+          <button mat-raised-button color="primary" [routerLink]="['/direccion']" [disabled]="carrito.items.length === 0">
+            Confirmar pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #carritoVacio>
+      <div class="carrito-vacio-info">
+        <h3>Tu carrito está vacío</h3>
+        <p>Parece que aún no has añadido ningún producto.</p>
+        <p>Explora nuestra tienda y encuentra tus álbumes favoritos.</p>
+        <button mat-raised-button color="accent" routerLink="/productos/list">Ir al catálogo</button>
+      </div>
+    </ng-template>
+  </div>

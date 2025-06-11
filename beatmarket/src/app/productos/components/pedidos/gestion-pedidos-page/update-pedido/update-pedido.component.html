@@ -1,0 +1,79 @@
+<h3 mat-dialog-title>Editar pedido</h3>
+
+<form class="mat-dialog-content" [formGroup]="pedidoForm">
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>ID del pedido</mat-label>
+      <input matInput formControlName="id" name="id" />
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent" appearance="fill" disabled>
+      <mat-label>Email del usuario</mat-label>
+      <input matInput [value]="emailUsuario" disabled />
+    </mat-form-field>
+  </div>
+
+  <div class="form" formGroupName="direccion">
+    <mat-form-field color="accent">
+      <mat-label>Calle</mat-label>
+      <input matInput formControlName="calle" name="calle" />
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>Ciudad</mat-label>
+      <input matInput formControlName="ciudad" name="ciudad" />
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>Código Postal</mat-label>
+      <input matInput formControlName="codigoPostal" name="codigoPostal" />
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>País</mat-label>
+      <input matInput formControlName="pais" name="pais" />
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Total (€)</mat-label>
+      <input matInput formControlName="total" name="total" />
+    </mat-form-field>
+  </div>
+<div class="form">
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="estado">
+          <mat-option value="pendiente">Pendiente</mat-option>
+          <mat-option value="enviado">Enviado</mat-option>
+          <mat-option value="entregado">Entregado</mat-option>
+          <mat-option value="cancelado">Cancelado</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form">
+    <mat-form-field color="accent">
+      <mat-label>Fecha</mat-label>
+      <input matInput formControlName="fecha" name="fecha" />
+    </mat-form-field>
+  </div>
+
+  <div class="form">
+    <label><strong>Productos:</strong></label>
+    <div *ngFor="let producto of productosCargados">
+      {{ producto.tituloAlbum }} - {{ producto.cantidad }} ud. - {{ producto.precio | currency:'EUR' }}
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button id="onSubmit" type="submit" [disabled]="!pedidoForm.valid" (click)="confirmAdd()">
+      Guardar
+    </button>
+    <button mat-button id="onNoClick" (click)="onNoClick()" tabindex="-1">
+      Cancelar
+    </button>
+  </div>
+</form>

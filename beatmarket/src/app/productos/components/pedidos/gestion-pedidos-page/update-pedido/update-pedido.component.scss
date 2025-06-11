@@ -1,0 +1,48 @@
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.habilitado {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+mat-checkbox {
+  margin-top: 10px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+#onSubmit {
+  background-color: #1976d2;
+  color: white;
+}
+
+#onSubmit:disabled {
+  background-color: #b0bec5;
+  color: #ffffff;
+}
+
+#onNoClick {
+  color: #dc3545;
+}

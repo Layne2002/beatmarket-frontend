@@ -1,0 +1,41 @@
+<div class="flex flex-column p-2">
+  <h3 style="color:black;">Buscador de albumes</h3>
+  <h4 style="color:black;">Aquí puedes buscar cualquier album de la base de datos global.
+    <br />
+    Si no encuentras el que buscas, puedes solicitarlo y te avisaremos cuando esté disponible.
+
+  </h4>
+  <mat-divider></mat-divider>
+  <mat-form-field>
+    <mat-label style="color:black">Buscador de producto</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      (input)="searchProducto()"
+    />
+  </mat-form-field>
+  <span class="spacer"></span>
+  <div *ngIf="productos?.length" class="grid mb-8">
+    <div *ngFor="let i of productos" class="col-12 sm:col-6 md:col-4 xl:col-3">
+      <mat-card class="film-card">
+        <img
+          [src]="getAlbumImage(i)"
+          (click)="verAlbum(i)"
+          style="cursor: pointer"
+          alt="{{ i.name }}"
+        />
+        <mat-card-content>
+          <h4 class="film-title" title="{{ i.name }}">{{ i.name }}</h4>
+          <p class="release-date" title="{{ i.artist }}">{{ i.artist }}</p>
+        </mat-card-content>
+        <div class="acciones-container">
+          <button mat-stroked-button color="warn" class="btn-deseado" (click)="solicitarAlbum(i)">
+            <mat-icon class="icono-corazon">favorite</mat-icon>
+            Añadir a deseados
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

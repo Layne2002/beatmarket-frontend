@@ -1,0 +1,36 @@
+<div class="direccion-page">
+    <h2>Dirección de entrega</h2>
+  
+    <form [formGroup]="direccionForm" (ngSubmit)="continuar()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput formControlName="nombre" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Calle</mat-label>
+        <input matInput formControlName="calle" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Ciudad</mat-label>
+        <input matInput formControlName="ciudad" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Código Postal</mat-label>
+        <input matInput formControlName="codigoPostal" required maxlength="5">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>País</mat-label>
+        <input matInput formControlName="pais" required>
+      </mat-form-field>
+  
+      <div class="acciones">
+        <button mat-raised-button color="primary" type="submit" [disabled]="direccionForm.invalid">
+          Continuar con el pago
+        </button>
+      </div>
+    </form>
+  </div>

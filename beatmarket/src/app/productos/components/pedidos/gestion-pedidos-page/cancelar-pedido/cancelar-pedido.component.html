@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Cancelar pedido</h2>
+
+<div class="mat-dialog-content">
+  <h3 class="warning-text">
+    <strong>¡Atención!:</strong> Estás a punto de cancelar este pedido.
+  </h3>
+
+  <p class="confirm-text">
+    Esta acción no se puede deshacer. ¿Estás seguro de que quieres cancelar este pedido?
+  </p>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" type="button" (click)="confirmarCancelacion()">
+      Cancelar Pedido
+    </button>
+    <button mat-button (click)="onNoClick()" tabindex="-1">
+      Volver
+    </button>
+  </div>
+</div>

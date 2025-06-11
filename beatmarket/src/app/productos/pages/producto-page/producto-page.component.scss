@@ -1,0 +1,89 @@
+.producto-page-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  color:white;
+}
+
+.producto-card {
+  max-width: 1000px;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #2c2c2c, #1c1c1c);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: #f1f1f1;
+}
+
+.producto-imagen {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.producto-info {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white !important;
+}
+
+.titulo-album {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.descripcion {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.descripcion-deslizable {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+}
+
+.mat-list-item {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+  color: #f1f1f1 !important;
+}
+
+.mat-list-item .mat-line {
+  color: #f1f1f1 !important;
+}
+
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.lista-pistas a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.lista-pistas a:hover {
+  text-decoration: underline;
+}

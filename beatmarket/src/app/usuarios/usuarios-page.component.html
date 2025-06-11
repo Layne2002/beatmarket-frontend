@@ -1,0 +1,64 @@
+<h1>Usuarios</h1>
+
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Buscar por email</mat-label>
+    <input matInput [(ngModel)]="searchText" (input)="applyFilter(searchText)" placeholder="Escribe el email del usuario" />
+    <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="applyFilter('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="button-container">
+  <button mat-raised-button color="primary" (click)="addUsuario()">
+    <mat-icon>add</mat-icon> Crear Usuario
+  </button>
+</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 mat-table">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let usuario"> {{ usuario.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let usuario"> {{ usuario.email }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre_completo">
+    <mat-header-cell *matHeaderCellDef> Nombre completo </mat-header-cell>
+    <mat-cell *matCellDef="let usuario">
+      {{ usuario.nombre }} {{ usuario.apellidos }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="rol">
+    <mat-header-cell *matHeaderCellDef> Rol </mat-header-cell>
+    <mat-cell *matCellDef="let usuario">
+      {{ usuario.rol === 1 ? 'Admin' : 'Usuario' }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+    <mat-cell *matCellDef="let usuario">
+      <button mat-icon-button color="accent" (click)="editUsuario(usuario)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteUsuario(usuario)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+<mat-paginator
+  #paginator
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  [pageSize]="10"
+  showFirstLastButtons>
+</mat-paginator>

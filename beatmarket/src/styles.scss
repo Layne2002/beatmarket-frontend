@@ -1,0 +1,77 @@
+@use '@angular/material' as mat;
+
+body {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+.mat-toolbar {
+  background: #212121 !important;
+  color: #e0e0e0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #ccc;
+}
+
+.mat-button, .mat-raised-button {
+  color: #e0e0e0;
+}
+
+.mat-cell, .mat-header-cell, .mat-row, .mat-header-row {
+  color: #e0e0e0; 
+}
+
+.mat-table {
+  background-color: #1e1e1e;
+}
+
+.mat-form-field {
+  color: #e0e0e0;
+}
+
+.mat-option {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+.mat-option:hover {
+  background-color: #3a3a3a;
+}
+
+.mat-select-panel {
+  background-color: #2a2a2a;
+}
+
+.mat-dialog-container {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.mat-list-item,
+.mat-list-item span,
+.mat-list-item .mat-line,
+.mat-list-item .mat-list-text,
+.mat-list-item .mat-content {
+  color: #f1f1f1 !important;
+}
+.mdc-list-item__primary-text {
+  color: #f1f1f1 !important;
+}
+
+.mat-paginator{
+  color:black !important;
+}
+
+::ng-deep .mat-mdc-select,
+::ng-deep .mat-mdc-select-trigger,
+::ng-deep .mat-mdc-select-value,
+::ng-deep .mat-mdc-select-panel,
+::ng-deep .mat-mdc-option {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}

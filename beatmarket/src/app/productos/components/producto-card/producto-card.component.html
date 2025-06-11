@@ -1,0 +1,36 @@
+<mat-card class="producto-card" *ngIf="producto?.id">
+  <div class="image-container">
+    <img
+      mat-card-image
+      [routerLink]="['/productos', producto.id]"
+      class="cursor-pointer producto-image"
+      [src]="producto.imagenURL ? producto.imagenURL : 'assets/images/assets/placeholder.png'"
+      [alt]="producto.tituloAlbum"
+    />
+  </div>
+
+  <div class="info-container">
+    <h3 class="titulo-album" title="{{ producto.tituloAlbum }}">
+      {{ producto.tituloAlbum }} 
+    </h3>
+    <h4 class="artista" title="{{ producto.autor }}">
+      Autor: {{ producto.autor }}
+    </h4>
+    <p class="precio">Precio: {{ producto.precio }} €</p>
+    <p *ngIf="producto.stock <= 5 && producto.stock > 0" class="stock-warning" style="color: red; font-weight: bold;">
+      ¡Solo quedan {{ producto.stock }} unidades en stock!
+    </p>
+    <p *ngIf="producto.stock === 0" class="stock-agotado" style="color: red; font-weight: bold;">
+      ¡No hay stock en estos momentos!
+    </p>
+  </div>
+  <div class="acciones-container">
+    <button mat-raised-button color="primary" [disabled]="producto.stock === 0" (click)="anyadirAlCarrito(producto)">
+      Añadir al carrito
+    </button>
+    <button mat-raised-button color="warn" (click)="solicitarAlbum(producto)">
+      <mat-icon>favorite</mat-icon>
+      Añadir a deseados
+    </button>"
+  </div>
+</mat-card>

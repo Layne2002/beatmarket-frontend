@@ -1,0 +1,32 @@
+<div class="mis-pedidos-container">
+  <h2>Mis Pedidos</h2>
+
+  <mat-accordion *ngIf="pedidos.length > 0">
+    <mat-expansion-panel *ngFor="let pedido of pedidos">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ID: {{ pedido.id || pedido.id }} {{ pedido.fecha | date:'mediumDate' }} – Total: {{ pedido.total | currency:'EUR' }}
+        </mat-panel-title>
+        <mat-panel-description>
+          Estado: {{ pedido.estado }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="direccion-envio">
+        <p><strong>Dirección de envío:</strong></p>
+        <p>Destinatario: {{ pedido.direccion.nombre }} {{ pedido.direccion.apellidos }}</p>
+        <p>Direcciñon: {{ pedido.direccion.calle }}, {{ pedido.direccion.codigoPostal }}, {{ pedido.direccion.ciudad }}, {{ pedido.direccion.pais }}
+      </p>
+        </div>
+
+      <div *ngFor="let item of pedido.items" class="pedido-item">
+        <p><strong>Álbum:</strong> {{ item.tituloAlbum }}</p>
+        <p><strong>Autor:</strong> {{ item.autor }}</p>
+        <p><strong>Cantidad:</strong> {{ item.cantidad }}</p>
+        <p><strong>Precio:</strong> {{ item.precio | currency:'EUR' }}</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <p *ngIf="pedidos.length === 0">No has realizado ningún pedido aún.</p>
+</div>

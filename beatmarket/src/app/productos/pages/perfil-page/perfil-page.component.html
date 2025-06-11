@@ -1,0 +1,32 @@
+<div class="perfil-container">
+  <h2>Editar Perfil</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="guardarCambios()" class="perfil-form">
+
+    <div class="perfil-grid">
+      <mat-form-field appearance="outline" class="perfil-field" style="color:white;">
+        <mat-label style="color:white;">Nombre</mat-label>
+        <input matInput formControlName="nombre" style="color:white;"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="perfil-field" style="color:white;">
+        <mat-label style="color:white;">Apellidos</mat-label>
+        <input matInput formControlName="apellidos" style="color:white;"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="perfil-field" style="color:white;">
+        <mat-label style="color:white;">Email</mat-label>
+        <input matInput formControlName="email" style="color:white;"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="perfil-field" style="color:white;">
+        <mat-label style="color:white;">Contraseña nueva (opcional)</mat-label>
+        <input matInput type="password" formControlName="contraseña" style="color:white;" />
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" [disabled]="userForm.invalid">
+      Guardar cambios
+    </button>
+  </form>
+</div>

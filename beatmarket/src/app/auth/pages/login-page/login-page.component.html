@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h1 class="page-name">Bienvenido a Beatmarket</h1>
+  <p class="welcome-message">¡Nos alegra verte de nuevo! Por favor, inicia sesión para continuar.</p>
+  <span class="login-title">Login</span>
+
+  <form [formGroup]="loginForm">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input
+        type="text"
+        formControlName="username"
+        matInput
+        placeholder="Mail"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="Contraseña"
+      />
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-button mat-flat-button color="primary" (click)="onLogin()">
+        Acceder
+      </button>
+
+      <button mat-button mat-flat-button color="warn" (click)="onRegister()">
+        Registrarse
+      </button>
+    </div>
+  </form>
+  <p class="info-text">¿No tienes cuenta aún? ¡Regístrate y empieza a explorar el catálogo musical más completo!</p>
+</div>

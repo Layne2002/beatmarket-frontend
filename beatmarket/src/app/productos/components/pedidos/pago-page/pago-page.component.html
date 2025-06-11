@@ -1,0 +1,55 @@
+<div class="pago-page">
+    <h2>Método de Pago</h2>
+  
+    <form [formGroup]="pagoForm" (ngSubmit)="continuar()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Método de pago</mat-label>
+        <mat-select formControlName="metodo">
+          <mat-option value="tarjeta">Tarjeta de crédito</mat-option>
+          <mat-option value="paypal">PayPal</mat-option>
+          <mat-option value="transferencia">Transferencia bancaria</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <div *ngIf="pagoForm.value.metodo === 'tarjeta'">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Número de tarjeta</mat-label>
+          <input matInput formControlName="numeroTarjeta" maxlength="16" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nombre del titular</mat-label>
+          <input matInput formControlName="nombre" />
+        </mat-form-field>
+
+        <div class="flex-row">
+          <mat-form-field appearance="fill">
+            <mat-label>Caducidad</mat-label>
+            <input matInput formControlName="caducidad" placeholder="MM/AA" />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>CVV</mat-label>
+            <input matInput formControlName="cvv" maxlength="3" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div *ngIf="pagoForm.value.metodo === 'paypal'" class="simulado-paypal">
+        <p>Serás redirigido a una pasarela simulada de PayPal.</p>
+        <button mat-raised-button color="accent" (click)="continuar()">Simular pago con PayPal</button>
+      </div>
+
+      <div *ngIf="pagoForm.value.metodo === 'transferencia'" class="simulado-transferencia">
+        <p>Realiza una transferencia bancaria al siguiente número de cuenta:</p>
+        <p><strong>ES12 3456 7890 1234 5678 9012</strong></p>
+        <button mat-raised-button color="accent" (click)="continuar()">He realizado la transferencia</button>
+      </div>
+  
+      <div class="acciones">
+        <button mat-raised-button color="primary" type="submit" [disabled]="pagoForm.invalid">
+          Continuar
+        </button>
+      </div>
+    </form>
+  </div>

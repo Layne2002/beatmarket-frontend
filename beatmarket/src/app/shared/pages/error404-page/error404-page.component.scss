@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 20px;
+}
+
+.mat-card {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imageBack {
+  background-image: url('../../../../assets/images/404.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 600;
+}

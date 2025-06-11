@@ -1,0 +1,162 @@
+<div class="producto-page-container" style="color: white">
+  <mat-card class="producto-card" *ngIf="producto && producto.id">
+    <div class="producto-detalle" style="color: white">
+      <div class="producto-imagen">
+        <img
+          mat-card-image
+          [routerLink]="['/productos', producto.id]"
+          class="producto-image"
+          [src]="producto.imagenURL || 'assets/images/assets/placeholder.png'"
+          [alt]="producto.tituloAlbum"
+        />
+      </div>
+      <div
+        *ngIf="producto.stock < 5 && producto.stock > 0"
+        style="color: red; font-weight: bold"
+      >
+        ¡Solo quedan {{ producto.stock }} unidades en stock!
+      </div>
+      <div *ngIf="producto.stock === 0" style="color: red; font-weight: bold">
+        ¡No hay stock en estos momentos!
+      </div>
+      <div class="acciones-carrito">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="anyadirAlCarrito()"
+          [disabled]="producto.stock === 0"
+        >
+          <mat-icon>add_shopping_cart</mat-icon>
+          Añadir al carrito
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="solicitarAlbum(producto)"
+        >
+          <mat-icon>favorite</mat-icon>
+          Añadir a deseados
+        </button>
+      </div>
+      <div class="producto-info" style="color: white">
+        <h2 class="titulo-album">
+          {{ producto.tituloAlbum }} / {{ producto.autor }}
+        </h2>
+
+        <div
+          class="descripcion-deslizable"
+          *ngIf="album?.wiki?.content"
+          style="margin-top: 20px; padding-bottom: 10px"
+        >
+          <h3 style="border-bottom: 1px solid gray; padding-bottom: 4px">
+            Descripción
+          </h3>
+          <p class="descripcion" [innerHTML]="album.wiki.content"></p>
+        </div>
+
+        <hr />
+
+        <div
+          class="estadisticas"
+          style="margin-top: 20px; padding-bottom: 10px; color: white"
+        >
+          <h3 style="border-bottom: 1px solid gray; padding-bottom: 4px">
+            Estadísticas
+          </h3>
+          <mat-list class="mat-list-white" style="color: white">
+            <mat-list-item style="color: white"
+              ><mat-icon
+                style="vertical-align: middle; margin-right: 6px; color: white"
+                >headphones</mat-icon
+              >
+              Reproducciones mensuales:
+              <strong>{{
+                album.listeners | number : "1.0-0"
+              }}</strong></mat-list-item
+            >
+            <mat-list-item style="color: white"
+              ><mat-icon
+                style="vertical-align: middle; margin-right: 6px; color: white"
+                >trending_up</mat-icon
+              >
+              Reproducciones totales:
+              <strong>{{
+                album.playcount | number : "1.0-0"
+              }}</strong></mat-list-item
+            >
+            <mat-list-item style="color: white"
+              ><mat-icon
+                style="vertical-align: middle; margin-right: 6px; color: white"
+                >attach_money</mat-icon
+              >
+              Precio: <strong>{{ producto.precio }} €</strong></mat-list-item
+            >
+            <mat-list-item
+              *ngIf="album?.tags?.tag?.length"
+              style="color: white"
+            >
+              <mat-icon
+                style="vertical-align: middle; margin-right: 6px; color: white"
+                >label</mat-icon
+              >
+              Tags:
+              <ng-container
+                *ngIf="album.tags.tag.length === 0"
+                style="color: white"
+                >No hay tags disponibles.</ng-container
+              >
+              <ng-container *ngFor="let tag of album.tags.tag; let last = last">
+                <a
+                  [href]="tag.url"
+                  target="_blank"
+                  style="color: lightblue; text-decoration: none"
+                >
+                  {{ tag.name }} </a
+                >{{ !last ? ", " : "" }}
+              </ng-container>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+        <hr />
+
+        <div
+          class="lista-pistas"
+          *ngIf="album?.tracks?.track?.length"
+          style="margin-top: 20px; padding-bottom: 10px"
+        >
+          <h3
+            style="
+              border-bottom: 1px solid gray;
+              padding-bottom: 4px;
+              color: white;
+            "
+          >
+            Pistas del álbum
+          </h3>
+          <mat-list class="mat-list-white">
+            <mat-list-item
+              *ngFor="let track of album.tracks.track; let i = index"
+            >
+              <span style="margin-right: 12px; font-weight: bold; color: white"
+                >{{ i + 1 }}.</span
+              >
+              <a
+                [href]="track.url"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                {{ track.name }}
+              </a>
+              <span style="margin-left: auto; color: white"
+                >{{ track.duration / 60 | number : "1.0-0" }}:{{
+                  track.duration % 60 | number : "2.0-0"
+                }}</span
+              >
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,20 @@
+<div class="gracias-container" *ngIf="pedido">
+  <h1>¡Gracias por tu pedido!</h1>
+  <h3>Resumen del pedido</h3>
+
+  <p><strong>Dirección de envío:</strong></p>
+  <ul>
+    <li>{{ pedido.direccion.calle }}</li>
+    <li>{{ pedido.direccion.ciudad }}, {{ pedido.direccion.codigoPostal }}</li>
+    <li>{{ pedido.direccion.pais }}</li>
+  </ul>
+  <p><strong>Método de pago:</strong> Tarjeta de crédito (simulada)</p>
+  <p><strong>Total:</strong> {{ pedido.total | currency:'EUR' }}</p>
+
+  <h4>Productos:</h4>
+  <ul>
+    <li *ngFor="let item of pedido.items">
+      {{ item.tituloAlbum }} - {{ item.autor }} (x{{ item.cantidad }}) — {{ item.precio * item.cantidad | currency:'EUR' }}
+    </li>
+  </ul>
+</div>

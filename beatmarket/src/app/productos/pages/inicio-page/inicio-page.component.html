@@ -1,0 +1,42 @@
+<div class="inicio-container">
+  <h1>Bienvenido a BeatMarket</h1>
+
+  <div class="botones-grid">
+    <button mat-raised-button color="primary" appearance="outline" [routerLink]="['/productos', 'search']">
+      <mat-icon>search</mat-icon> Buscador
+    </button>
+    <button mat-raised-button color="accent" appearance="outline" routerLink="/mis-pedidos">
+      <mat-icon>inventory_2</mat-icon> Mis pedidos
+    </button>
+    <button mat-raised-button color="warn" appearance="outline" routerLink="/productos/list">
+      <mat-icon>library_music</mat-icon> Catálogo
+    </button>
+    <button mat-raised-button color="primary" appearance="outline" routerLink="/productos/deseados">
+      <mat-icon>favorite</mat-icon> Mis solicitados
+    </button>
+  </div>
+
+  <div class="imagen-container">
+    <img src="assets/images/assets/beatmarket-logo.png" alt="Logo de BeatMarket" class="logo-imagen">
+  </div>
+
+  <p class="bienvenida-texto">
+    Sumérgete en el universo musical de <strong>BeatMarket</strong> 🎶
+  </p>
+
+  <p class="instrucciones-texto">
+    Usa el buscador para encontrar tus álbumes favoritos o explora nuestro catálogo para descubrir nuevas joyas musicales.
+  </p>
+
+  <p class="contacto-texto">
+    ¿Tienes dudas o sugerencias? <strong>Contáctanos</strong>, ¡estamos aquí para ayudarte!
+  </p>
+
+  <p class="contacto-texto">
+    Síguenos en redes sociales para no perderte novedades, lanzamientos y promociones exclusivas 📢
+  </p>
+
+  <p class="contacto-texto">
+    <em>¡Gracias por elegir BeatMarket, tu tienda de música de confianza!</em>
+  </p>
+</div>

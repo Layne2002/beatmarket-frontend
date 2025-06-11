@@ -1,0 +1,74 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="side" [ngStyle]="{ width: '250px' }">
+    <mat-toolbar color="warn" class="sidenav-toolbar">
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list class="sidenav-list">
+      <ng-container *ngFor="let i of userSidebarItems">
+        <mat-list-item  class="objeto"[routerLink]="i.url" (click)="sidenav.toggle()">
+          <mat-icon matListItemIcon>{{ i.icon }}</mat-icon>
+          <span class="mat-list-text">{{ i.label }}</span>
+        </mat-list-item>
+      </ng-container>
+
+      <mat-divider *ngIf="authService.getUserRoleFromToken() === 1"></mat-divider>
+
+      <ng-container *ngIf="authService.getUserRoleFromToken() === 1">
+        <h4 class="admin-title" style="padding: 0.5rem 1rem;">Administración</h4>
+        <ng-container *ngFor="let i of adminItems">
+          <mat-list-item [routerLink]="i.url" (click)="onSidebarItemClick(i.label)">
+            <mat-icon matListItemIcon>{{ i.icon }}</mat-icon>
+            <span class="mat-list-text">{{ i.label }}</span>
+          </mat-list-item>
+        </ng-container>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="layout-wrapper" style="display: flex; flex-direction: column; min-height: 100vh;">
+      <mat-toolbar color="primary" class="main-toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+          <button mat-button [routerLink]="['/inicio']">
+            <mat-icon>home</mat-icon>
+            Inicio
+          </button>
+          <button mat-button [routerLink]="['/productos/carrito']">
+            <mat-icon>shopping_cart</mat-icon>
+            Carrito
+          </button>
+        <span class="spacer"></span>
+        <button mat-icon-button [routerLink]="['./perfil']" aria-label="Perfil de usuario">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <div class="user-info">
+          <span>{{ authService.currentUser?.nombre }}</span>
+          <button mat-button (click)="onLogout()">Logout</button>
+        </div>
+      </mat-toolbar>
+
+      <div style="flex: 1 0 auto;">
+        <div class="container p-2 contenido-ajustable">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+      <mat-toolbar color="primary" class="footer-toolbar" style="justify-content: center; flex-shrink: 0;">
+        <div class="footer-content">
+          <div>
+            <strong>Contacto:</strong> Teléfono: <a href="tel:123123123">123 123 123</a> | Email: <a href="mailto:beatmarket&#64;gmail.com">beatmarket&#64;gmail.com</a>
+          </div>
+          <div style="font-size: 0.85rem; margin-top: 0.2rem;">
+            &copy; 2025 BeatMarket. Todos los derechos reservados.
+          </div>
+        </div>
+      </mat-toolbar>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,94 @@
+.dialog-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #90caf9;
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.mat-dialog-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  overflow-y: auto;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.form-field {
+  margin-bottom: 24px;
+}
+::ng-deep .mat-mdc-select-panel,
+::ng-deep .mat-mdc-option {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.mat-form-field-infix {
+  color: #e0e0e0;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+button {
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[disabled] {
+  background-color: #555 !important;
+  color: #ccc !important;
+  margin:5px;
+}
+
+button:hover:not([disabled]) {
+  transform: scale(1.05);
+}
+
+button#onNoClick {
+  background-color: #d32f2f;
+  color: white;
+}
+
+button#onNoClick:hover {
+  background-color: #b71c1c;
+}
+
+button#onSubmit {
+  background-color: #388e3c;
+  color: white;
+}
+
+button#onSubmit:hover {
+  background-color: #2e7d32;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}

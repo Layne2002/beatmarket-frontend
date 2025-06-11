@@ -1,0 +1,152 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #e0e0e0;
+}
+
+.form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+  color: #e0e0e0;
+  margin-bottom: 16px;
+}
+
+.habilitado {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+mat-checkbox {
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+#onSubmit {
+  background-color: #2e7d32;
+  color: white;
+}
+
+#onSubmit:disabled {
+  background-color: #455a64;
+  color: #cccccc;
+}
+
+#onNoClick {
+  color: #ff5252;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #90caf9 !important;
+}
+
+.mat-form-field-underline .mat-form-field-ripple {
+  background-color: #90caf9 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #90caf9 !important;
+}
+::ng-deep .mat-mdc-select-panel,
+::ng-deep .mat-mdc-option {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+.mat-form-field.mat-focused .mat-form-field-outline {
+  color: #90caf9 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline-thick {
+  color: #90caf9 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #90caf9 !important;
+}
+
+.mat-input-element {
+  caret-color: #90caf9;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-form-field-ripple {
+  background-color: #90caf9 !important;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #90caf9 !important;
+  border-color: #90caf9 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-color: #666 !important;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-outline {
+  border-color: #f44336 !important;
+}
+
+.mat-form-field-label {
+  color: #ccc !important;
+}
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-guardar {
+  background-color: #388e3c;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background-color: #2e7d32;
+}
+
+.btn-cancelar {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #b71c1c;
+}
+
+.dialog-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #90caf9;
+  text-align: center;
+  margin-bottom: 24px;
+}

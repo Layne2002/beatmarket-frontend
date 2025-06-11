@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>¿Está seguro?</h1>
+<div mat-dialog-content>
+  <p>
+    Este proceso no e reversible. Si continúa eleminará a
+    <strong>{{ data }}</strong>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="warn">No Thanks</button>
+  <span class="spacer"></span>
+  <button mat-button (click)="onConfirm()" color="primary">OK</button>∫
+</div>

@@ -1,0 +1,23 @@
+<h1 class="h1 strong">Catálogo de productos</h1>
+<h4> Aquí puedes ver el catálogo de productos que tenemos disponibles</h4>
+<h4> Puedes buscar por título o autor</h4>
+<h4> Si no encuentras el que buscas, puedes solicitarlo en "Fuera de stock" y te avisaremos cuando esté disponible.</h4>
+<mat-divider></mat-divider>
+<div class="buscador-container">
+  <mat-form-field appearance="fill" class="buscador-field">
+    <mat-label>Buscar álbum en stock</mat-label>
+    <input matInput [(ngModel)]="filtro" (input)="filtrarProductos()" placeholder="Escribe el título o autor" />
+  </mat-form-field>
+</div>
+<span class="spacer"></span>
+<mat-paginator [length]="totalProductos"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="[5, 10, 20]"
+               (page)="onPageChange($event)"
+               >
+</mat-paginator>
+<div class="grid-container">
+  <div *ngFor="let i of pagedProductos" class="grid-item">
+    <app-producto-card [producto]="i"></app-producto-card>
+  </div>
+</div>

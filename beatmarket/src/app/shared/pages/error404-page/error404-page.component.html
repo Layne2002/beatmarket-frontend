@@ -1,0 +1,24 @@
+<div class="container not-found">
+  <mat-card class="mat-elevation-z8 error-card">
+    <mat-card-header class="text-center">
+      <mat-card-title>
+        <h1 class="error-code">404</h1>
+      </mat-card-title>
+      <mat-card-subtitle class="text-muted">
+        Página no encontrada
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="text-center">
+      <p class="lead">
+        ¡Oops! Parece que la página que buscas no existe o ha sido movida.
+      </p>
+      <p>Verifica la URL o regresa al inicio.</p>
+      <div class="buttons">
+        <button mat-raised-button color="accent" (click)="goInit()">
+          Regresar al inicio
+        </button>
+        <button mat-stroked-button color="warn" (click)="goBack()">Volver atrás</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

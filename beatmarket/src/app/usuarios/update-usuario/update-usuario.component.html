@@ -1,0 +1,60 @@
+<h3 mat-dialog-title class="dialog-title">Editar usuario</h3>
+
+<div class="form-wrapper">
+  <form class="mat-dialog-content" [formGroup]="usuarioForm">
+    <div class="form-grid">
+      <mat-form-field color="accent" appearance="outline" class="form-control">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput formControlName="email" name="email" required />
+      </mat-form-field>
+
+      <mat-form-field color="accent" appearance="outline" class="form-control">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" name="nombre" required />
+      </mat-form-field>
+
+      <mat-form-field color="accent" appearance="outline" class="form-control">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos" name="apellidos" required />
+      </mat-form-field>
+
+      <mat-form-field color="accent" appearance="outline" class="form-control">
+        <mat-label>Cambiar contraseña</mat-label>
+        <input matInput type="password" formControlName="contraseña" name="contraseña" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-control" style="grid-column: span 2;">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">
+          <mat-option *ngFor="let rol of roles" [value]="rol.id_rol">
+            {{ rol.rol }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-buttons">
+      <button
+        id="onSubmit"
+        mat-raised-button
+        color="primary"
+        class="btn-guardar"
+        type="submit"
+        [disabled]="!usuarioForm.valid"
+        (click)="confirmAdd()"
+      >
+        Guardar
+      </button>
+      <button
+        id="onNoClick"
+        mat-stroked-button
+        color="warn"
+        class="btn-cancelar"
+        (click)="onNoClick()"
+        tabindex="-1"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

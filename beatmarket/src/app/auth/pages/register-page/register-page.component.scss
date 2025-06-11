@@ -1,0 +1,63 @@
+
+
+.register-container {
+  background-color: #121212;
+  color: #f1f1f1;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 4rem auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .form-field {
+      width: 100%;
+
+      .mat-form-field-wrapper {
+        background-color: #1e1e1e;
+        border-radius: 4px;
+        padding: 0.5rem;
+      }
+
+      .mat-form-field-label {
+        color: #b0bec5;
+      }
+
+      .mat-input-element {
+        color: #ffffff;
+      }
+    }
+
+    .submit-btn {
+      margin-top: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .login-link {
+    margin-top: 2rem;
+    text-align: center;
+
+    .text-lb {
+      margin-right: 0.5rem;
+      color: #cccccc;
+    }
+
+    .login-btn {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.perfil-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+}
+
+.perfil-container h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.perfil-field {
+  width: 100%;
+}
+
+.perfil-container .mat-form-field-appearance-outline .mat-form-field-outline {
+  border-color: #555;
+}
+
+.perfil-container .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-color: #888;
+}
+
+.perfil-container .mat-form-field-label {
+  color: #ccc !important;
+}
+
+.perfil-container .mat-input-element {
+  color: #fff !important;
+}
+
+.perfil-container .mat-input-element::placeholder {
+  color: #bbb !important;
+}
+
+.perfil-container input.mat-input-element,
+.perfil-container textarea.mat-input-element {
+  color: #fff !important;
+}
+
+.perfil-container input.mat-input-element::placeholder,
+.perfil-container textarea.mat-input-element::placeholder {
+  color: #bbb !important;
+}
+
+.perfil-container .mat-raised-button.mat-primary {
+  background-color: #1976d2;
+  color: #fff;
+}
