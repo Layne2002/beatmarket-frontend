@@ -29,19 +29,19 @@ This repository contains the Angular frontend application. The project was desig
 
 ### Home
 
-![Home](docs/screenshots/home.png)
+![Home](docs/screenshots/Home.png)
 
 ### Product Catalog
 
-![Product Catalog](docs/screenshots/catalog.png)
+![Product Catalog](docs/screenshots/Catalog.png)
 
 ### Product Detail
 
-![Product Detail](docs/screenshots/product.png)
+![Product Detail](docs/screenshots/Product.png)
 
 ### Shopping Cart
 
-![Shopping Cart](docs/screenshots/cart.png)
+![Shopping Cart](docs/screenshots/Cart.png)
 
 ## Project Structure
 
